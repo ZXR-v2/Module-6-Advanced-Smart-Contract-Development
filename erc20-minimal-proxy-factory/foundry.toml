@@ -1,0 +1,12 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.20"
+remappings = ["openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/"]
+
+[rpc_endpoints]
+mainnet = "https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY"
+
+[etherscan]
+mainnet = { key = "YOUR_ETHERSCAN_KEY" }
