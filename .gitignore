@@ -1,0 +1,24 @@
+# Node
+node_modules/
+package-lock.json
+
+# Foundry
+out/
+cache/
+broadcast/
+
+# Build artifacts
+*.log
+*.tmp
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local

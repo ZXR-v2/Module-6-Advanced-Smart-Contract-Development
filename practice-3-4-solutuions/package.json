@@ -1,0 +1,14 @@
+{
+  "name": "practice-3-4-solutions",
+  "type": "module",
+  "scripts": {
+    "read": "npx tsx readLocks.ts"
+  },
+  "dependencies": {
+    "viem": "^2.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,6 +1,6 @@
 模块六：合约开发进阶 - 深入理解 EVM 运行 、 GAS 优化、合约审计与安全、合约升级
 
-实战 1： 应用最小代理实现 ERC20 铸币工厂， 理解最小代理如何节省 Gas，同时理解 “公平” 发射的概念。
+实战 1： 应用最小代理实现 ERC20 铸币工厂， 理解最小代理如何节省 Gas，同时理解 "公平" 发射的概念。
 
 链接: https://decert.me/quests/75782f22-edb8-4e82-9b68-0a4f46fcaadd
 
@@ -20,9 +20,13 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 
 链接: https://decert.me/challenge/163c68ab-8adf-4377-a1c2-b5d0132edc69
 
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/blob/main/practice-3-4-solutuions/MyWallet.sol
+
 实战 4：利用存储布局的理解，读取私有变量的值
 
 链接：https://decert.me/quests/b0782759-4995-4bcb-85c2-2af749f0fde9
+
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/tree/main/practice-3-4-solutuions
 
 实战 5：利用 Merkel 树及 MultiCall 等技术实现用户体验和 Gas 的优化
 
@@ -41,6 +45,7 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 链接： https://decert.me/quests/8ea21ac0-fc65-414a-8afd-9507c0fa2d90
 
 实战 9： 这个一个安全挑战题，你需要充当黑客，设法取出预先部署的 Vault 合约内的所有资金
+
 链接：https://decert.me/quests/b5368265-89b3-4058-8a57-a41bde625f5b
 
 实战 10：利用第三方服务（如 ChainLink Automation 等）实现对合约关键状态监控与自动化调用，
