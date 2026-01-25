@@ -10,6 +10,12 @@
 
 链接: https://decert.me/quests/6a5ce6d6-0502-48be-8fe4-e38a0b35df62
 
+原始NFTMarket和优化 NFTMarket 的比较：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/blob/main/NFTMarket/contracts/gas_compare.md
+
+优化后的NFTMarket_V2源码：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/blob/main/NFTMarket/contracts/src/NFTMarket_V2.sol
+
+github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/NFTMarket/contracts
+
 实战 3：掌握 EVM 存储布局，确定给定代码 的 owner 的Slot 位置，使用内联汇编读取和修改Owner
 
 链接: https://decert.me/challenge/163c68ab-8adf-4377-a1c2-b5d0132edc69
