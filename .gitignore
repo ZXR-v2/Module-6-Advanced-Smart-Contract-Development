@@ -9,6 +9,7 @@ broadcast/
 
 # Build artifacts
 *.log
+!**/output.log
 *.tmp
 
 # IDE
