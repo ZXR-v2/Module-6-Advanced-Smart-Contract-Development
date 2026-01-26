@@ -32,6 +32,15 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 
 链接： https://decert.me/quests/faa435a5-f462-4f92-a209-3a7e8fdc4d81
 
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/tree/main/AirdopMerkleNFTMarket
+
+功能说明：
+- 基于 Merkle 树验证白名单用户（享受 50% 折扣）
+- EIP-2612 Permit 授权（无需提前 approve）
+- Multicall (delegateCall) 批量调用：permitPrePay + claimNFT
+- 完整测试覆盖（17 个测试通过）
+- TypeScript 脚本：Merkle 树构建、multicall 调用封装、完整 demo
+
 实战 6：理解账户抽象 AA ( ERC4337 与 EIP7702 )，利用最新的上线的 EIP 7702 发起打包交易
 
 链接： https://decert.me/quests/2c550f3e-0c29-46f8-a9ea-6258bb01b3ff
