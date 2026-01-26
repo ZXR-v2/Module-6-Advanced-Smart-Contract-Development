@@ -1,0 +1,80 @@
+﻿=== Multicall Helper Example ===
+
+This script demonstrates how to build and execute multicall transactions.
+
+Required environment variables:
+  RPC_URL         - Ethereum RPC URL
+  PRIVATE_KEY     - Private key of the buyer (with 0x prefix)
+  TOKEN_ADDRESS   - Address of the PermitToken
+  MARKET_ADDRESS  - Address of the AirdopMerkleNFTMarket
+  TOKEN_ID        - NFT token ID to purchase
+
+Example:
+  RPC_URL=http://localhost:8545 \
+  PRIVATE_KEY=0x... \
+  TOKEN_ADDRESS=0x... \
+  MARKET_ADDRESS=0x... \
+  TOKEN_ID=0 \
+  npx ts-node scripts/multicall-helper.ts
+╔════════════════════════════════════════════════════════════╗
+║       AirdopMerkleNFTMarket Demo Flow                      ║
+╚════════════════════════════════════════════════════════════╝
+
+📋 Accounts:
+   Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+   Seller:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+   Buyer:    0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC (whitelisted)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📦 Step 1: Transfer tokens to buyer
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ Transferred 1000 tokens to buyer
+   📊 Buyer token balance: 1000 tokens
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎨 Step 2: Mint NFT to seller
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ Minted NFT #0 to seller
+   📊 NFT owner: 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 Step 3: Seller approves and lists NFT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ Seller approved market for NFT
+   ✅ NFT #0 listed for 100 tokens
+   📊 Listing: seller=0x70997970C51812dc3A010C7d01b50e0d17dc79C8, price=100, active=true
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌳 Step 4: Load Merkle proof for buyer
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ Buyer is whitelisted
+   📊 Merkle proof: ["0x895fcfca45b761f42d85849ce9d8b111905c7417e64dcc0738a7abbae89ad17e","0x166a633...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 Step 5: Execute multicall (permitPrePay + claimNFT)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   📊 Original price: 100 tokens
+   📊 Discounted price (50% off): 50 tokens
+
+Discounted price for token 0: 50 ETH
+   📦 Multicall data prepared
+      Call 1 (permitPrePay): 0x25f699420000000000000000000000003c44cd...
+      Call 2 (claimNFT): 0x765b1845000000000000000000000000000000...
+
+
+Executing multicall...
+Transaction hash: 0xd7603757f5ef5677495dd91f7310b744ce0eff6cd6b458cf6053f058edf32984
+Transaction confirmed in block 7
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Step 6: Verify results
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   📊 NFT #0 new owner: 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+   📊 Seller received: 50 tokens
+   📊 Buyer remaining balance: 950 tokens
+
+╔════════════════════════════════════════════════════════════╗
+║                    🎉 Demo Complete! 🎉                    ║
+╚════════════════════════════════════════════════════════════╝
+
+Transaction hash: 0xd7603757f5ef5677495dd91f7310b744ce0eff6cd6b458cf6053f058edf32984

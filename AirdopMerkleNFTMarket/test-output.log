@@ -1,0 +1,23 @@
+No files changed, compilation skipped
+
+Ran 17 tests for test/AirdopMerkleNFTMarket.t.sol:AirdopMerkleNFTMarketTest
+[PASS] test_BuyNFT() (gas: 178392)
+[PASS] test_ClaimNFTWithDiscount() (gas: 236192)
+[PASS] test_DelistNFT() (gas: 104724)
+[PASS] test_GetDiscountedPrice() (gas: 124988)
+[PASS] test_ListNFT() (gas: 128688)
+[PASS] test_MulticallWithDifferentBuyer() (gas: 238639)
+[PASS] test_RevertWhen_BuyUnlistedNFT() (gas: 18326)
+[PASS] test_RevertWhen_ClaimWithInvalidProof() (gas: 206198)
+[PASS] test_RevertWhen_DelistByNonSeller() (gas: 127597)
+[PASS] test_RevertWhen_DoubleClaim() (gas: 378148)
+[PASS] test_RevertWhen_ListWithZeroPrice() (gas: 11080)
+[PASS] test_RevertWhen_NonOwnerSetsMerkleRoot() (gas: 13033)
+[PASS] test_SetMerkleRoot() (gas: 19873)
+[PASS] test_TransferOwnership() (gas: 19158)
+[PASS] test_VerifyWhitelist() (gas: 14721)
+[PASS] test_VerifyWhitelist_InvalidProof() (gas: 11422)
+[PASS] test_WhitelistedUserCanClaimMultipleDifferentNFTs() (gas: 364708)
+Suite result: ok. 17 passed; 0 failed; 0 skipped; finished in 12.23ms (26.65ms CPU time)
+
+Ran 1 test suite in 76.12ms (12.23ms CPU time): 17 tests passed, 0 failed, 0 skipped (17 total tests)

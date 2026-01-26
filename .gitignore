@@ -1,15 +1,11 @@
 # Node
 node_modules/
-package-lock.json
 
 # Foundry
 out/
 cache/
-broadcast/
 
 # Build artifacts
-*.log
-!**/output.log
 *.tmp
 
 # IDE
