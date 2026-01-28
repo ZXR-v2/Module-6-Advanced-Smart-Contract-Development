@@ -1,0 +1,117 @@
+No files changed, compilation skipped
+
+Ran 15 tests for test/NFTMarket.t.sol:NFTMarketTest
+[PASS] test_CompleteUpgradeFlow() (gas: 727215)
+Logs:
+  
+========================================
+     COMPLETE UPGRADE FLOW TEST
+  ========================================
+
+  --- Phase 1: V1 Functionality ---
+  Market Version: 1.0.0
+  Listed NFT #1 for 100 tokens
+  Buyer purchased NFT #1
+  NFT #1 owner: 0x6813Eb9362372EEF6200f3b1dbC3f819671cBA69
+  
+--- Phase 2: More Listings Before Upgrade ---
+  Listed NFT #2 for 200 tokens
+  Accumulated fees before upgrade: 2 tokens
+  
+--- Phase 3: Upgrade to V2 ---
+  Market Version after upgrade: 2.0.0
+  Accumulated fees after upgrade: 2 tokens
+  Fees preserved: true
+  Listing #2 preserved - seller: 0x2B5AD5c4795c026514f8317c7a215E218DcCD6cF
+  Listing #2 price: 200 active: true
+  
+--- Phase 4: V2 Signature Functionality ---
+  Created signature for NFT # 4
+  Price: 100 tokens
+  Deadline: 3601
+  Purchased NFT # 4 with signature
+  NFT # 4 new owner: 0x6813Eb9362372EEF6200f3b1dbC3f819671cBA69
+  
+--- Phase 5: V1 Functionality Still Works ---
+  Purchased NFT #2 using V1 buy function
+  NFT #2 owner: 0x6813Eb9362372EEF6200f3b1dbC3f819671cBA69
+  
+--- Final State ---
+  Total accumulated fees: 10 tokens
+  Buyer token balance: 9600
+  Seller token balance: 390
+  
+========================================
+     UPGRADE TEST COMPLETED SUCCESSFULLY
+  ========================================
+
+
+[PASS] test_UpgradePreservesMultipleListings() (gas: 500653)
+Logs:
+  === Multiple Listings Upgrade Test ===
+  Accumulated fees preserved: true
+  Listing 2 seller preserved: true
+  Listing 2 price preserved: true
+  Listing 2 active status preserved: true
+
+[PASS] test_UpgradeToV2() (gas: 289490)
+Logs:
+  === Upgrade Test Results ===
+  Version before: 1.0.0
+  Version after: 2.0.0
+  Seller preserved: true
+  Price preserved: true
+  Total listings preserved: true
+
+[PASS] test_V1FunctionalityWorksAfterUpgrade() (gas: 346405)
+Logs:
+  === V1 Functionality After Upgrade ===
+  List works: true
+  Buy works: true
+  NFT transferred to buyer: true
+
+[PASS] test_V1_Buy() (gas: 290828)
+[PASS] test_V1_Delist() (gas: 184444)
+[PASS] test_V1_List() (gas: 195864)
+[PASS] test_V1_Version() (gas: 14338)
+[PASS] test_V1_WithdrawFees() (gas: 312161)
+[PASS] test_V2_BuyWithSignature() (gas: 351906)
+Logs:
+  === V2 Buy With Signature Test ===
+  Direct purchase completed
+  Seller received: 97500000000000000000
+  Fee collected: 2500000000000000000
+  NFT transferred to buyer: true
+
+[PASS] test_V2_CancelAllSignatures() (gas: 153714)
+Logs:
+  === Cancel All Signatures Test ===
+  Nonce incremented, old signature invalidated: true
+
+[PASS] test_V2_ExpiredSignature() (gas: 105561)
+Logs:
+  === Expired Signature Test ===
+  Expired signature rejected: true
+
+[PASS] test_V2_InvalidSignature() (gas: 131932)
+Logs:
+  === Invalid Signature Test ===
+  Invalid signature rejected: true
+
+[PASS] test_V2_ListWithSignature() (gas: 338006)
+Logs:
+  === V2 Signature Listing Test ===
+  Token ID: 1
+  Price: 100000000000000000000
+  Seller: 0x2B5AD5c4795c026514f8317c7a215E218DcCD6cF
+  NFT in escrow: true
+
+[PASS] test_V2_SignatureReplayProtection() (gas: 298279)
+Logs:
+  === Signature Replay Protection Test ===
+  First signature use: SUCCESS
+  Second signature use: REVERTED (SignatureAlreadyUsed)
+
+Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 11.69ms (33.44ms CPU time)
+
+Ran 1 test suite in 69.40ms (11.69ms CPU time): 15 tests passed, 0 failed, 0 skipped (15 total tests)

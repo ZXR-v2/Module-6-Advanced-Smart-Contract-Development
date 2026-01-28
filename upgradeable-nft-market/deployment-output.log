@@ -1,0 +1,68 @@
+============================================
+   NFT Market Deployment Output
+   Network: Sepolia (Chain ID: 11155111)
+   Date: 2026-01-29
+============================================
+
+Deploying contracts with deployer: 0x5aba664d6532973C921A6533E20a35438f2E5A40
+
+== Deployment Logs ==
+
+MarketNFT Implementation deployed at: 0x866FC3Df183517066fd9Dd206E8a581Fa3211DE8
+MarketNFT Proxy deployed at: 0xD0b1e195C088659e98421628174f8eFB5E102a89
+PaymentToken Implementation deployed at: 0x499Aad6Df756122a220D4e09462487feB13DC7fc
+PaymentToken Proxy deployed at: 0x7f8d283B05375F90452C25325424cddEeab3daa4
+NFTMarketV1 Implementation deployed at: 0xada6cb9971112Ca5e463Ab1123d57575b3C07C45
+NFTMarket Proxy deployed at: 0xaf3c313844E4cc1140B860FD3Dc9922bF32B2CAE
+NFTMarketV2 Implementation deployed at: 0x712Bb982eaf7384Ab39AaAd3e0E6a157697E71c3
+
+========================================
+         DEPLOYMENT SUMMARY
+========================================
+
+Proxy Contracts (User-facing):
+  MarketNFT Proxy:      0xD0b1e195C088659e98421628174f8eFB5E102a89
+  PaymentToken Proxy:   0x7f8d283B05375F90452C25325424cddEeab3daa4
+  NFTMarket Proxy:      0xaf3c313844E4cc1140B860FD3Dc9922bF32B2CAE
+
+Implementation Contracts:
+  MarketNFT Impl:       0x866FC3Df183517066fd9Dd206E8a581Fa3211DE8
+  PaymentToken Impl:    0x499Aad6Df756122a220D4e09462487feB13DC7fc
+  NFTMarketV1 Impl:     0xada6cb9971112Ca5e463Ab1123d57575b3C07C45
+  NFTMarketV2 Impl:     0x712Bb982eaf7384Ab39AaAd3e0E6a157697E71c3
+
+========================================
+
+== Transaction Details ==
+
+Chain: 11155111 (Sepolia)
+Estimated gas price: 2.153508036 gwei
+Estimated total gas used for script: 10341469
+Estimated amount required: 0.022270436595544884 ETH
+
+== Transaction Status ==
+
+Note: Some transactions were dropped from the mempool.
+This may be due to:
+1. Gas price too low
+2. Network congestion
+3. Nonce issues
+
+Dropped transactions:
+- 0x3ee9f4c3c3d1cff194456a4dfb544c34569eb337fa75115829a548e7c1ea3c5e
+- 0x4d10644c40e0374ea580efcbb5432b57ef089affcf2fbbb5906c2e74219a1afc
+- 0x59e2d1504968dac9d9081a174c9fce2808ab99e72388deb5103a9fd42f3446b0
+- 0x34e245a5a8a59724bfd154293e9c68f270b546ba71535ab4ca5bd0e1a7eec037
+- 0x88d519efb5d89a53269a16d7d0058e6011e37c8a9dcaeb967cd4e3ab12be4e90
+- 0xa2277919dd9cfbe3104879f57b82798cc7853258456b7d9bd583e2146c3e0eb3
+- 0xd62742cd62dafb9f2e38bda18350295e55d36e75aa13b6f70367eb3b0d4f1612
+
+== Verification ==
+
+Please verify contract deployment on Etherscan:
+- MarketNFT Proxy: https://sepolia.etherscan.io/address/0xD0b1e195C088659e98421628174f8eFB5E102a89
+- PaymentToken Proxy: https://sepolia.etherscan.io/address/0x7f8d283B05375F90452C25325424cddEeab3daa4
+- NFTMarket Proxy: https://sepolia.etherscan.io/address/0xaf3c313844E4cc1140B860FD3Dc9922bF32B2CAE
+
+If contracts are not found, re-deploy with higher gas:
+forge script script/Deploy.s.sol:DeployScript --rpc-url $SEPOLIA_RPC_URL --broadcast --verify --with-gas-price 5gwei

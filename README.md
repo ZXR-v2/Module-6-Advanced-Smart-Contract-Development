@@ -49,6 +49,23 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 
 链接： https://decert.me/quests/ddbdd3c4-a633-49d7-adf9-34a6292ce3a8
 
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/tree/main/upgradeable-nft-market
+
+功能说明：
+- 可升级的 ERC721 NFT 合约 (UUPS 代理模式)
+- NFTMarketV1：基础市场功能（上架、下架、购买）
+- NFTMarketV2：新增离线签名上架功能
+  - 签名内容：tokenId, price, nonce, deadline
+  - 用户仅需一次 setApprovalForAll，每次上架只需签名
+  - 支持签名直接购买（无需先上架）
+- 完整升级测试（15 个测试用例通过）
+- 升级前后状态保持一致验证
+
+合约地址（Sepolia 测试网）：
+- NFTMarket Proxy: [`0xaf3c313844E4cc1140B860FD3Dc9922bF32B2CAE`](https://sepolia.etherscan.io/address/0xaf3c313844E4cc1140B860FD3Dc9922bF32B2CAE)
+- NFTMarketV1 Implementation: [`0xada6cb9971112Ca5e463Ab1123d57575b3C07C45`](https://sepolia.etherscan.io/address/0xada6cb9971112Ca5e463Ab1123d57575b3C07C45)
+- NFTMarketV2 Implementation: [`0x712Bb982eaf7384Ab39AaAd3e0E6a157697E71c3`](https://sepolia.etherscan.io/address/0x712Bb982eaf7384Ab39AaAd3e0E6a157697E71c3)
+
 练习 8: 深入理解合约升级涉及的存储布局
 
 链接： https://decert.me/quests/8ea21ac0-fc65-414a-8afd-9507c0fa2d90
