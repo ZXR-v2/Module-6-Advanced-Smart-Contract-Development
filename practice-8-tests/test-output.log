@@ -1,0 +1,100 @@
+Compiling 1 files with Solc 0.8.25
+Solc 0.8.25 finished in 7.34s
+Compiler run successful!
+
+Ran 3 tests for test/StructUpgrade.t.sol:StructUpgradeTest
+[PASS] test_StorageLayoutComparison() (gas: 1254261)
+Logs:
+  
+  ========================================
+  TEST: Storage Layout Comparison
+  ========================================
+  
+  [Storage] Base slot for users[1]:
+    keccak256(userId . mappingSlot) = 0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f
+  
+  [V1 Storage Layout]
+    Slot S+0 (name pointer): 0x5465737400000000000000000000000000000000000000000000000000000008
+    Slot S+1 (age=42): 0x000000000000000000000000000000000000000000000000000000000000002a
+    Slot S+2 (isActive=true): 0x0000000000000000000000000000000000000000000000000000000000000001
+    Slot S+3 (empty): 0x0000000000000000000000000000000000000000000000000000000000000000
+  
+  [V2 Storage Layout]
+    Slot S+0 (name pointer): 0x5465737400000000000000000000000000000000000000000000000000000008
+    Slot S+1 (age=42): 0x000000000000000000000000000000000000000000000000000000000000002a
+    Slot S+2 (isActive=true): 0x0000000000000000000000000000000000000000000000000000000000000001
+    Slot S+3 (email - new, empty): 0x0000000000000000000000000000000000000000000000000000000000000000
+    Slot S+4 (score - new, 0): 0x0000000000000000000000000000000000000000000000000000000000000000
+  
+  ========================================
+  CONCLUSION: Storage slots preserved after upgrade!
+  ========================================
+
+[PASS] test_UpgradeWithFieldsAtBeginning_DataCorrupted() (gas: 941558)
+Logs:
+  
+  ========================================
+  TEST: Upgrade with fields at BEGINNING
+  ========================================
+  
+  [V1] Creating user...
+  [V1] User: name=Alice, age=25, active=true
+  
+  [UPGRADE] Upgrading to V2Bad (field added at BEGINNING)...
+  [V2Bad] Upgrade complete!
+  [V2Bad] Version: 2.0.0-bad
+  
+  [V2Bad] Reading data (will be CORRUPTED)...
+  [V2Bad] 'id' field (actually old name data): 29591882003946055267496362720332152801745358025600646668181088590235118338058
+  [V2Bad] Note: The 'id' field now contains garbage (old name bytes as uint256)
+  
+  [V2Bad] Attempting to read user data with low-level call...
+  [V2Bad] Expected: Revert due to storage byte array incorrectly encoded
+  [V2Bad] Call success: false
+  [V2Bad] CONFIRMED: Call reverted - data is corrupted!
+  
+  ========================================
+  CONCLUSION: Adding fields at BEGINNING causes PANIC!
+    - Storage data becomes unreadable
+    - Contract functionality is broken
+    - This is a CRITICAL bug!
+  ========================================
+
+[PASS] test_UpgradeWithFieldsAtEnd_DataPreserved() (gas: 1412189)
+Logs:
+  
+  ========================================
+  TEST: Upgrade with fields at END
+  ========================================
+  
+  [V1] Creating users...
+  [V1] User 1: name=Alice, age=25, active=true
+  [V1] User 2: name=Bob, age=30, active=true
+  [V1] Version: 1.0.0
+  
+  [UPGRADE] Upgrading to V2 (fields added at END)...
+  [V2] Upgrade complete!
+  [V2] Version: 2.0.0
+  
+  [V2] Verifying original data is preserved...
+  [V2] User 1: name=Alice, age=25, active=true
+  [V2] User 2: name=Bob, age=30, active=true
+  
+  [V2] PASS: Original data preserved!
+  
+  [V2] Checking new fields have default values...
+  [V2] User 1 new fields: email='', score=0
+  [V2] User 2 new fields: email='', score=0
+  [V2] PASS: New fields have default values!
+  
+  [V2] Updating new fields...
+  [V2] User 1 after update: email='alice@example.com', score=100
+  [V2] PASS: New fields can be updated!
+  
+  ========================================
+  CONCLUSION: Adding fields at END is SAFE!
+  ========================================
+
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 6.78ms (9.59ms CPU time)
+
+Ran 1 test suite in 73.98ms (6.78ms CPU time): 3 tests passed, 0 failed, 0 skipped (3 total tests)

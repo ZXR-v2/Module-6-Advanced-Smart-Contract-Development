@@ -70,6 +70,15 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 
 链接： https://decert.me/quests/8ea21ac0-fc65-414a-8afd-9507c0fa2d90
 
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/tree/main/practice-8-tests
+
+功能说明：
+- 验证 Mapping 中结构体末尾添加字段是安全的
+- 验证 Mapping 中结构体开头/中间添加字段会导致数据损坏
+- 验证 Array 中结构体添加字段（即使末尾）会导致数据错乱
+- 使用 vm.load 直接读取存储槽，直观展示存储布局变化
+- 完整测试用例验证各种升级场景
+
 实战 9： 这个一个安全挑战题，你需要充当黑客，设法取出预先部署的 Vault 合约内的所有资金
 
 链接：https://decert.me/quests/b5368265-89b3-4058-8a57-a41bde625f5b
