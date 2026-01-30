@@ -45,6 +45,22 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 
 链接： https://decert.me/quests/2c550f3e-0c29-46f8-a9ea-6258bb01b3ff
 
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/tree/main/TokenBank-tokenbank-delegate
+
+功能说明：
+- 使用 MetaMask 官方 EIP-7702 Delegator 合约 (`0x63c0c19a282a1B52b07dD5a65b58948A07DAE32B`)
+- 通过 EIP-5792 `useSendCalls` 实现批量交易（approve + deposit 一次完成）
+- MetaMask 自动处理 EOA 升级到智能账户的流程
+- TokenBank V2 支持 Hook 回调一步存款
+- Next.js + Wagmi v2 + RainbowKit 前端
+
+合约地址（Sepolia 测试网）：
+- MyTokenV2: [`0xCD0262E3459d4D2B809f0EBC5054b7eA778dd573`](https://sepolia.etherscan.io/address/0xCD0262E3459d4D2B809f0EBC5054b7eA778dd573)
+- TokenBankV2: [`0x6ebDC5f380009016D0d1FCeCA8372542a9c79043`](https://sepolia.etherscan.io/address/0x6ebDC5f380009016D0d1FCeCA8372542a9c79043)
+
+测试交易：
+- EIP-7702 批量存款: [`0xf6df2c554bfbf6b0e74036745255381d451fbf4d80dcc99e2535fece2984c965`](https://sepolia.etherscan.io/tx/0xf6df2c554bfbf6b0e74036745255381d451fbf4d80dcc99e2535fece2984c965)
+
 实战 7： 将 NFTMarket 合约改成可升级模式，在实战过程中理解可升级合约的编写，理解代理合约及实现合约的作用，以及如何对合约进行升级，如何开源逻辑实现合约
 
 链接： https://decert.me/quests/ddbdd3c4-a633-49d7-adf9-34a6292ce3a8
