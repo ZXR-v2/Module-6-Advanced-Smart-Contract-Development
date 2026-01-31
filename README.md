@@ -99,6 +99,13 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 
 链接：https://decert.me/quests/b5368265-89b3-4058-8a57-a41bde625f5b
 
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/tree/main/openspace_ctf-main
+
+攻击中心思想：
+- **存储布局碰撞**：利用 `Vault` 合约（代理）和 `VaultLogic` 合约（逻辑）之间 Slot 布局的一致性。
+- **绕过密码校验**：通过 `delegatecall` 在 `Vault` 的上下文中执行 `changeOwner`。此时函数读取的密码 Slot 1 实际上存放的是 `Vault` 的 `logic` 合约地址，通过传入该地址作为密码即可通过验证。
+- **重入攻击**：夺取 `owner` 权限并开启提现后，利用 `withdraw` 函数中“先转账后销账”的重入漏洞，在余额归零前取走所有 ETH。
+
 实战 10：利用第三方服务（如 ChainLink Automation 等）实现对合约关键状态监控与自动化调用，
 
 链接：https://decert.me/quests/072fccb4-a976-4cf9-933c-c4ef14e0f6eb
