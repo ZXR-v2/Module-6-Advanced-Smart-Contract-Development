@@ -109,3 +109,14 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 实战 10：利用第三方服务（如 ChainLink Automation 等）实现对合约关键状态监控与自动化调用，
 
 链接：https://decert.me/quests/072fccb4-a976-4cf9-933c-c4ef14e0f6eb
+
+对应代码：https://github.com/ZXR-v2/Module-6-Advanced-Smart-Contract-Development/tree/main/bank-automation
+
+功能说明：
+- 自动化银行存取逻辑：当 Bank 合约余额超过设定阈值（0.01 ETH）时，触发自动化任务。
+- Chainlink Automation 集成：实现 `checkUpkeep` 和 `performUpkeep` 接口。
+- 自动化操作：当条件满足时，自动将合约一半的余额转移给 Owner。
+- 已在 Sepolia 测试网验证部署并注册任务。
+
+合约地址（Sepolia 测试网）：
+- Bank: [`0x48304A86420293319D7b84C5AeD3dd5DCd94a25A`](https://sepolia.etherscan.io/address/0x48304a86420293319d7b84c5aed3dd5dcd94a25a)
