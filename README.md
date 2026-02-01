@@ -120,3 +120,4 @@ github代码库：https://github.com/ZXR-v2/Module-5-Chain-Wallet-Dev/tree/main/
 
 合约地址（Sepolia 测试网）：
 - Bank: [`0x48304A86420293319D7b84C5AeD3dd5DCd94a25A`](https://sepolia.etherscan.io/address/0x48304a86420293319d7b84c5aed3dd5dcd94a25a)
+- [Chainlink Automation 执行记录](https://automation.chain.link/sepolia/81505629592459099950703531743198166546776416527697562837201995252543055929952) 
